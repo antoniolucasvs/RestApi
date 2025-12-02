@@ -14,8 +14,10 @@ public class RestapiApplication {
 		SpringApplication.run(RestapiApplication.class, args);
 	}
 	
+	private record IndexRequest(String message) {}
+	
 	@GetMapping("/")
-	public String HelloWorld(){
-		return "É os cria não tem jeito";
+	public IndexRequest index(){
+		return new IndexRequest("Hello World");
 	}
 }
